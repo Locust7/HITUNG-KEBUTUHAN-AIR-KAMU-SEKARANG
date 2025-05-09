@@ -53,7 +53,7 @@ usia = st.number_input("🎂 Umur kamu (biar nggak salah ngitung):", min_value=1
 def hitung_air(berat, aktivitas, cuaca, jenis_kelamin, usia):
     dasar = berat * 30
 
-    if aktivitas == "Cukup banyak praktik 🧘":
+    if aktivitas == "Hari ini cuma matkul teori 🧘":
         dasar += 300
     elif aktivitas == "Lari Kejar deadline laprak 🏃‍♂️💨":
         dasar += 600
@@ -103,4 +103,4 @@ if st.button("🧃 Hitung Berapa Kamu Harus Minum Hari Ini!"):
 
 # FOOTER lucu
 st.markdown("---")
-st.markdown("<p style='text-align: center; color: grey;'>🐬 Dibuat oleh tim <b>LPK 7 Daviona, Ifta, Nadila, Vania, Sulthan</b> yang haus ide & air 💡💧</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: grey;'>🐬 Dibuat oleh tim <b>LPK 7 Daviona😊, Ifta😍, Nadila🤡, Vania😡, Sulthan🥸</b> yang haus ide & air 💡💧</p>", unsafe_allow_html=True)
