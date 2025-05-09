@@ -3,12 +3,12 @@ import streamlit as st
 # Konfigurasi halaman
 st.set_page_config(page_title="🐧 Kalkulator Minum Air Harian Lucu", layout="centered")
 
-# Background tema air minum gelas
+# Background tema air minum gelas (pakai direct link)
 st.markdown(
     """
     <style>
     .stApp {
-        background-image: url("https://www.freepik.com/free-photo/woman-drinking-water-after-exercise_21802925.htm#fromView=search&page=1&position=49&uuid=0aa4a1cc-beb6-4110-b3b8-1f5f9414766c&query=drink+water");
+        background-image: url("https://img.freepik.com/free-photo/young-woman-drinking-water_23-2149180300.jpg");
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
@@ -51,27 +51,31 @@ usia = st.number_input("🎂 Umur kamu (biar nggak salah ngitung):", min_value=1
 
 # Fungsi perhitungan lucu
 def hitung_air(berat, aktivitas, cuaca, jenis_kelamin, usia):
-    dasar = berat * 30
+    dasar = berat * 30  # dasar kebutuhan air dalam ml
 
-    if aktivitas == "Hari ini cuma matkul teori 🧘":
+    # Tambahan berdasarkan aktivitas
+    if aktivitas == "Hari ini cuma matkul teori 😴":
         dasar += 300
     elif aktivitas == "Lari Kejar deadline laprak 🏃‍♂️💨":
         dasar += 600
 
+    # Tambahan berdasarkan cuaca
     if cuaca == "🔥 Panas Terik!":
         dasar += 400
     elif cuaca == "❄️ Dingin Brrrr":
         dasar -= 200
 
+    # Penyesuaian berdasarkan jenis kelamin
     if jenis_kelamin == "👦 Laki-laki":
         dasar += 200
     else:
         dasar -= 100
 
+    # Penyesuaian berdasarkan usia
     if usia < 18:
         dasar -= 300
 
-    return dasar / 1000
+    return dasar / 1000  # dalam liter
 
 # Tombol dan hasil perhitungan
 if st.button("🧃 Hitung Berapa Kamu Harus Minum Hari Ini!"):
@@ -104,3 +108,4 @@ if st.button("🧃 Hitung Berapa Kamu Harus Minum Hari Ini!"):
 # FOOTER lucu
 st.markdown("---")
 st.markdown("<p style='text-align: center; color: grey;'>🐬 Dibuat oleh tim <b>LPK 7 Daviona😊, Ifta😍, Nadila🤡, Vania😡, Sulthan🥸</b> yang haus ide & air 💡💧</p>", unsafe_allow_html=True)
+
